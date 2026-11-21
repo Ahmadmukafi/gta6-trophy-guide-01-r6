@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VICE CITY VAULT — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="vault-head">
+  <div class="vault-ring" id="vaultRing" title="Platinum progress">
+    <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+      <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+      <circle class="ring-fg" id="ringFg" cx="60" cy="60" r="52"></circle>
+      <circle class="ring-inner" cx="60" cy="60" r="40"></circle>
+    </svg>
+    <div class="ring-label"><span id="ringPct">0%</span><small>to platinum</small></div>
+  </div>
+  <div class="head-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <h1>VICE CITY VAULT</h1>
+    <p class="sub">The Leonida trophy vault — all 55 official trophies, a cited guide for each one, and a tracker that remembers your progress.</p>
+    <p class="counts" id="counts">0 of 55 earned</p>
+    <p class="grades-line">1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze &middot; 4 missable</p>
+    <p class="grades-breakdown" id="gradesBreakdown"></p>
+  </div>
+</header>
+
+<nav class="toolbar" aria-label="Tracker controls">
+  <input id="search" type="search" placeholder="Search trophies…" aria-label="Search trophies">
+  <div class="chips" id="kindChips" role="group" aria-label="Filter by kind">
+    <button type="button" data-kind="all" class="chip on">All</button>
+    <button type="button" data-kind="story" class="chip">Story</button>
+    <button type="button" data-kind="missable" class="chip">Missable</button>
+    <button type="button" data-kind="collectible" class="chip">Collectibles</button>
+    <button type="button" data-kind="activity" class="chip">Activities</button>
+    <button type="button" data-kind="online" class="chip">Online</button>
+  </div>
+  <label class="ctl">Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="ctl">Show
+    <select id="earnedFilter">
+      <option value="all">All trophies</option>
+      <option value="earned">Earned only</option>
+      <option value="unearned">Not yet earned</option>
+    </select>
+  </label>
+  <label class="ctl switch"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
+  <button id="exportBtn" type="button">Export progress</button>
+  <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+  <span class="keys-hint">Keys: <kbd>/</kbd> search &middot; <kbd>S</kbd> spoilers &middot; <kbd>R</kbd> roadmap &middot; <kbd>E</kbd> export</span>
+</nav>
+
+<section class="roadmap" id="roadmap">
+  <div class="roadmap-head">
+    <h2>Roadmap to the platinum</h2>
+    <p>Six stages, in the order to play them. Built from the official descriptions — which story chapters and missions, which collectibles and counts.</p>
+  </div>
+  <ol class="stages" id="stages"></ol>
+</section>
+
+<main class="vault-body">
+  <section class="list-col" aria-label="Trophy checklist">
+    <p class="list-meta" id="listMeta"></p>
+    <ul class="trophies" id="trophyList"></ul>
+    <p class="empty" id="emptyState" hidden>No trophies match these filters.</p>
+  </section>
+  <aside class="detail-col" id="detail" aria-label="Selected trophy guide">
+    <p class="detail-hint">Select a trophy to read its guide and sources.</p>
+  </aside>
+</main>
+
+<footer class="vault-foot">
+  <p><strong>How this guide is sourced.</strong> Every guide names its sources beside it — the PlayStation official trophy list, Exophase and PSNProfiles. Guide text is written in our own words for this entry; official names and descriptions are shown exactly as PlayStation publishes them. No guide text is copied from another guide.</p>
+  <p>Progress is saved in this browser only (localStorage). Export downloads a file you can import back on any machine. This guide works fully offline.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
